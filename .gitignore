@@ -134,3 +134,5 @@ Private/_MarkW.png
 *.JPG
 Inputs/*
 Proto.ipynb
+Proto.ipynb
+*.ipynb
