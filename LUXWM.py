@@ -187,7 +187,7 @@ def exif_to_table(image_path, Quiet = True, Message = ''):
     image = Image.open(image_path)
     # Retrieve EXIF data
 
-    exif_data = image.getexif()
+    exif_data = image._getexif()
 
     # Create a dictionary to store the EXIF data
     exif = {}
