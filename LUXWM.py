@@ -279,6 +279,7 @@ def figure_to_image(figure):
     canvas = FigureCanvas(figure)
 
     s, (width, height) = canvas.print_to_buffer()
+    
 
     return Image.frombytes("RGBA", (width, height), s)
 
@@ -291,6 +292,8 @@ def Exif_to_Digest(imagepath, Quiet, Message):
     dfr3 = df[["Aperture", "ISO", "Shutter speed", "Focal length"]]
 
     fig, ax = print_table_as_image([dfr1, dfr2, dfr3])
+    
+    plt.close()
 
     return figure_to_image(fig)
 
