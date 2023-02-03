@@ -31,6 +31,8 @@ def add_border(
 
     image = Image.open(imagepath)
 
+    image = ImageOps.exif_transpose(image)
+
     width, height = image.size
     
     if Social and (width > 3000 or height > 3000):
@@ -300,11 +302,12 @@ def Exif_to_Digest(imagepath, Quiet, Message):
 def Process_Batch(folder,
                   Social=True,
                   Threshold=3000,
-                  Quiet=True,
+                  Silent=True,
                   SeriesTitle="",
                   Idempotence=True):
 
-    for imagefile in os.listdir(folder):
+    Quiet = Silent
+    for imagefile in sorted(os.listdir(folder)):
 
         if Idempotence:
             if (imagefile.startswith("Processed")):
