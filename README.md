@@ -7,6 +7,6 @@ place your own watermark files in ./Private. For dark mode, _MarkW.png, and for 
 ## Basic usage
 ```python 
 import LUXWM
-LUXWM.Process_Batch('Inputs/', Quiet = True, SeriesTitle= "", Idempotence = True)
+LUXWM.Process_Batch('Inputs/', Silent = True, SeriesTitle= "", Idempotence = True)
 ```
 
